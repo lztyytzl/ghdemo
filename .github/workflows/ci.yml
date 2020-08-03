@@ -6,9 +6,8 @@ name: ci
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: 
+       - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,13 +20,13 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: CI
+    - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@master
       env: 
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-page
+        BRANCH: gh-pages
         FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
