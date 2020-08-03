@@ -2,8 +2,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h3>Installed CLI Plugins</h3>
-	<h1>自动更新内容发布</h1>
+	<h3>自动更新内容发布</h3>
 	<h3>无刷新加载</h3>
+	<3>无缓存</h3>
   </div>
 </template>
 
